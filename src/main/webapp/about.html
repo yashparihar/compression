@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.header{
+	text-align: center;
+	padding: 30px;
+	background: white;
+	color: black;
+}
+</style>
+
+<script>
+/* Open the sidenav */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+} 
+</script>
+
+</head>
+<body>
+
+<div class="header">
+	<h1><i>Some Info</i></h1>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Back To Main</a><br>
+  <a href="tool.html">Tool</a><br>
+  <a href="team.html">Meet the Team</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 
+<i>Navigate</i>
+</span>
+<br>
+<img src="../asset/img/micro.jpg" width="500" height="300">
+<p> <h4>
+Digital production, transmission and storage have revolutionized how we access and use information but have also made archiving an increasingly complex task that requires active, continuing maintenance of digital media. This challenge has focused some interest on DNA as an attractive target for information storage because of its capacity for high-density information encoding, longevity under easily achieved conditions and proven track record as an information bearer. Previous DNA-based information storage approaches have encoded only trivial amounts of information or were not amenable to scaling-up, and used no robust error-correction and lacked examination of their cost-efficiency for large-scale information archival. Here we describe a scalable method that can reliably store more information than has been handled before. We encoded computer files totalling 739 kilobytes of hard-disk storage and with an estimated Shannon information of 5.2×10<sup>6</sup> bits into a DNA code, synthesized this DNA, sequenced it and reconstructed the original files with 100% accuracy. Theoretical analysis indicates that our DNA-based storage scheme could be scaled far beyond current global information volumes and offers a realistic technology for large-scale, long-term and infrequently accessed digital archiving. In fact, current trends in technological advances are reducing DNA synthesis costs at a pace that should make our scheme cost-effective for sub-50-year archiving within a decade.
+Main
+Although techniques for manipulating, storing and copying large amounts of existing DNA have been established for many years one of the main challenges for practical DNA-based information storage is the difficulty of synthesizing long sequences of DNA de novo to an exactly specified design. As in the approach, we represent the information being stored as a hypothetical long DNA molecule and encode this in vitro using shorter DNA fragments. This offers the benefits that isolated DNA fragments are easily manipulated in vitro, and that the routine recovery of intact fragments from samples that are tens of thousands of years old indicates that well-prepared synthetic DNA should have an exceptionally long lifespan in low-maintenance environments. In contrast, approaches using living vectors are not as reliable, scalable or cost-efficient owing to disadvantages such as constraints on the genomic elements and locations that can be manipulated without affecting viability, the fact that mutation will cause the fidelity of stored and decoded information to reduce over time, and possibly the requirement for storage conditions to be carefully regulated. Existing schemes used for DNA computing in principle permit large-scale memory, but data encoding in DNA computing is inextricably linked to the specific application or algorithm and no practical storage schemes have been realized.
+</h4>
+</p>
+</body>
+</html> 

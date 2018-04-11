@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href="../asset/bootstrap.css" type='text/css' />
+<style>
+body {
+	font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+
+.header {
+	text-align: center;
+	padding: 30px;
+	background: white;
+	color: black;
+}
+
+.btn {
+	background-color: DodgerBlue;
+	border: none;
+	color: white;
+	padding: 12px 16px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+	background-color: RoyalBlue;
+}
+
+.navMenu {
+	border: #1abc9c;
+}
+
+.menuSec {
+	padding: 5px;
+	margin: 2px;
+	display: inline;
+	background: #a6d5ec;
+}
+
+.menuSec:hover {
+	background-color: #2aabd2;
+	color: white;
+	text-decoration: none;
+}
+
+.activelink {
+	color: white;
+	background-color: #2aabd2;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.section {
+	margin: 10px;
+	border: dashed;
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+.underConstruction {
+	color: red;
+}
+
+.loader {
+	position: absolute;
+	margin-left: 33%;
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #3498db;
+	width: 50px;
+	height: 50px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@
+-webkit-keyframes spin { 0% {
+	-webkit-transform: rotate(0deg);
+}
+
+100%
+{
+-webkit-transform
+:
+ 
+rotate
+(360deg);
+ 
+}
+}
+@
+keyframes spin { 0% {
+	transform: rotate(0deg);
+}
+
+100%
+{
+transform
+:
+ 
+rotate
+(360deg);
+ 
+}
+}
+.loadingPage {
+	
+}
+</style>
+<script>
+	function openNav() {
+		document.getElementById("mySidenav").style.width = "100%";
+	}
+
+	/* Close/hide the sidenav */
+	function closeNav() {
+		document.getElementById("mySidenav").style.width = "0";
+	}
+</script>
+
+</head>
+<body>
+
+	<div class="header">
+		<h1>
+			<i> The Tool</i>
+		</h1>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
+			<br> <a href="index.html">Main Page</a><br> <br> <a
+				href="team.html">Team</a><br> <br> <a href="about.html">Some
+				Info</a><br> <br>
+		</div>
+
+		<span style="font-size: 40px; cursor: pointer" onclick="openNav()">&#9776;
+			<b>NAVIGATE</b>
+		</span> <br> <br>
+		<h3>
+			<i>Uses Huffman Algorithm ..Lossless Compression and
+				Decompression *Note Encoder file needed for Decompression </i>
+		</h3>
+		<br>
+
+		<div class="navMenu">
+			<a href="#" id="compSecLink" class="menuSec activelink" href="">Compressing
+				File </a> <a href="#" id="decompSecLink" class="menuSec">
+				Decompressing File </a>
+		</div>
+
+		<!-- COMPRESS SECTION -->
+		<div id="compSec" class="section active">
+
+			<div class="" id="loader"></div>
+
+			<!--<form action="myform.cgi">-->
+			<!--<input type="file" name="fileupload" value="fileupload" id="fileupload">-->
+			<!--<label for="fileupload"> Select a file to upload</label>-->
+			<!--<button class="btn"><i class="fa fa-folder"></i> Folder</button>-->
+
+			<!--</form>-->
+
+			<!-- UPLOAD TEXT FILE FOR RTGC COMPRESS  -->
+			<div class="upload_section">
+				<form enctype="multipart/form-data">
+					<input class="fileUpload" accept="text/plain" id="file_upload" name="file_upload"
+						type="file" /> <input type="text" id="file_desc" name="file_desc" />
+					<input class="btn btn-primary" type="button" value="Compress File"
+						id="submitbtn" />
+				</form>
+			</div>
+
+			<!-- DOWNLOAD COMPRESS FILE AND ENCODER  -->
+			<div class="download_section" style="display:none">
+
+				<form action="/compress" method="GET">
+
+					<input class="btn btn-primary" type="submit" name="downloadFile"
+						id="encoderFileDownload" value="Encoder Download" /> <input
+						type="submit" class="btn btn-primary" name="downloadFile"
+						id="compressFileDownload" value="Compressfile Download" /> <a
+						href="#" id="compressMore"> Compress New File </a>
+
+				</form>
+			</div>
+
+		</div>
+		<!-- END COMP SECTION -->
+
+		<!-- DECOMPRESS SECTION -->
+		<div id="decompSec" class="section">
+
+			<!-- UPLOAD TEXT FILE FOR RTGC COMPRESS  -->
+			<div class="upload_section">
+
+				<div class="underConstruction">Work is UnderConstruction !</div>
+
+				<form enctype="multipart/form-data">
+					<input class="fileUpload" accept="text/plain" id="compressfile_upload"
+						name="compressfile_upload" type="file" /> <input type="text"
+						placeholder="compressed file" id="compressfile_desc"
+						name="file_desc" /> <br /> <input id="encoderfile_upload"
+						name="compressfile_upload" type="file" /> <input type="text"
+						placeholder="encoder file" id="encoderfile_desc" name="file_desc" />
+					<input class="btn btn-primary" type="button"
+						value="Decompress File" id="uncompressbtn" />
+				</form>
+			</div>
+
+			<div class="download_section">
+				<form action="/uncompress" method="GET">
+
+					<input class="btn btn-primary" type="submit" name="downloadFile"
+						class="downloadFile" id="uncompressFileDownload"
+						value="Uncompress File Download" /> <a href="#"
+						id="uncompressMore"> UnCompress Another File </a>
+
+				</form>
+			</div>
+
+		</div>
+
+		<!--END DECOMPRESS SECTION -->
+
+
+
+
+
+		<script src="../asset/jquery-3.3.1.min.js"></script>
+		<script src="../asset/app.js"></script>
+		<script src="../asset/compress.js"></script>
+		<script src="../asset/uncompress.js"></script>
+
+		<script>
+			// window.onload = function () {
+			//     toggleWindow(sessionToken);
+			// }
+		</script>
+	</div>
+
+</body>
+</html>
